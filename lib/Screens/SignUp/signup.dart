@@ -101,13 +101,8 @@ class SignUp extends StatelessWidget {
                                     )
                                 )
                             ),
-                            onPressed: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Welcome()
-                                ),
-                              ),
+                          onPressed: () => {
+                            Navigator.pushNamed(context, '/signin'),
                           },
                         ),
                       ),

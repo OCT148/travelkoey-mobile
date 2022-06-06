@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travelkoey/Screens/SignUp/signup.dart';
-import 'package:travelkoey/Screens/SignIn/signin.dart';
 
 class Welcome extends StatelessWidget {
 
@@ -85,12 +83,7 @@ class Welcome extends StatelessWidget {
                                   )
                               ),
                             onPressed: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn()
-                                ),
-                              ),
+                              Navigator.pushNamed(context, '/signin'),
                             },
                           ),
                         ),
@@ -113,12 +106,7 @@ class Welcome extends StatelessWidget {
                                   )
                               ),
                               onPressed: () => {
-                                Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SignUp()
-                                ),
-                              ),
+                                Navigator.pushNamed(context, '/signup'),
                             },
                           ),
                         ),
