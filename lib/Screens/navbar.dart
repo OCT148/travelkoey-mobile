@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelkoey/Screens/Agenda/agenda_baru.dart';
 import 'package:travelkoey/Screens/Home/home.dart';
 import 'package:travelkoey/Screens/Kategori/kategori.dart';
+import 'package:travelkoey/Screens/Welcome/welcome.dart';
+import 'package:travelkoey/Screens/Wishlist/wishlist.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -13,7 +16,7 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int _activePage = 0;
-  final List<Widget> _tabItems = [Home(), Kategori(), Agenda_Baru()];
+  final List<Widget> _tabItems = [Home(), Kategori(), Agenda_Baru(), Wishlist()];
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,18 @@ class _NavBarState extends State<NavBar> {
           centerTitle: true,
           title: Image.asset('assets/images/logo.png',scale: 15,),
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          actions: [
+            RaisedButton(
+              color: Colors.red,
+              onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              prefs.remove('id');
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Welcome()), (Route<dynamic> route) => false);
+            },
+            child: Text('Logout', style: TextStyle(color: Colors.white, fontSize: 16)),
+          ),
+
+          ],
         ),
         bottomNavigationBar: CurvedNavigationBar(
           index: 0,
@@ -43,6 +58,12 @@ class _NavBarState extends State<NavBar> {
               height: 50,
               child: Column(
                 children: [Icon(Icons.calendar_month, size: 30), Text("Agenda")],
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Column(
+                children: [Icon(Icons.shopping_cart, size: 30), Text("Wishlist")],
               ),
             ),
           ],

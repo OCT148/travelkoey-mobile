@@ -1,3 +1,5 @@
+// @dart=2.9
+
 class Locations {
   int id;
   String title;
@@ -7,37 +9,22 @@ class Locations {
   String image;
 
   Locations({
-    required this.id,
-    required this.title,
-    required this.category,
-    required this.description,
-    required this.body,
-    required this.image,
+    this.id,
+    this.title,
+    this.category,
+    this.description,
+    this.body,
+    this.image
   });
 
-  static List<Locations> fetchAll() {
-    return [
-      Locations(
-          id: 1,
-          title: 'Lokasi alam',
-          category: 'Alam',
-          description: 'Kota A',
-          body: 'Lokasi berada di kota A',
-          image: 'assets/images/alam.jpeg'),
-      Locations(
-          id: 2,
-          title: 'Lokasi kerajinan',
-          category: 'Kerajinan',
-          description: 'Kota B',
-          body: 'Lokasi berada di kota B',
-          image: 'assets/images/kerajinan.jpeg'),
-      Locations(
-          id: 3,
-          title: 'Lokasi sejarah',
-          category: 'Sejarah',
-          description: 'Kota C',
-          body: 'Lokasi berada di kota C',
-          image: 'assets/images/sejarah.jpeg'),
-    ];
+  factory Locations.fromJson(Map<String, dynamic> json) {
+    return Locations(
+        id: int.parse(json['id']),
+        title: json['title'],
+        category: json['category'],
+        description: json['description'],
+        body: json['body'],
+        image: json['image']
+    );
   }
 }

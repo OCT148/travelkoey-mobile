@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:travelkoey/Screens/Kategori/alam.dart';
+import 'package:travelkoey/Screens/Kategori/edukasi.dart';
+import 'package:travelkoey/Screens/Kategori/kerajinan.dart';
+import 'package:travelkoey/Screens/Kategori/religi.dart';
+import 'package:travelkoey/Screens/Kategori/sejarah.dart';
 
 
 class Kategori extends StatelessWidget {
@@ -27,7 +32,7 @@ class Kategori extends StatelessWidget {
                   ),
                 ),
                 onTap: () => {
-                  Navigator.pushNamed(context, '/kategori/alam'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Alam())),
                 },
               ),
               InkWell(
@@ -43,7 +48,7 @@ class Kategori extends StatelessWidget {
                   ),
                 ),
                 onTap: () => {
-                  Navigator.pushNamed(context, '/kategori/edukasi'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Edukasi())),
                 },
               ),
               InkWell(
@@ -59,7 +64,7 @@ class Kategori extends StatelessWidget {
                   ),
                 ),
                 onTap: () => {
-                  Navigator.pushNamed(context, '/kategori/kerajinan'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Kerajinan())),
                 },
               ),
               InkWell(
@@ -75,7 +80,7 @@ class Kategori extends StatelessWidget {
                   ),
                 ),
                 onTap: () => {
-                  Navigator.pushNamed(context, '/kategori/religi'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Religi())),
                 },
               ),
               InkWell(
@@ -91,7 +96,7 @@ class Kategori extends StatelessWidget {
                   ),
                 ),
                 onTap: () => {
-                  Navigator.pushNamed(context, '/kategori/sejarah'),
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Sejarah())),
                 },
               ),
             ],

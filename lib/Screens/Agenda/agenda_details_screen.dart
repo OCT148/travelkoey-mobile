@@ -9,33 +9,38 @@ class AgendaKegiatanDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(agenda.imageURL),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(agenda.nama_tempat, style: TextStyle(fontSize: 30),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                agenda.tanggal,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 17.0, fontStyle: FontStyle.italic),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(agenda.imageURL),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  agenda.nama_kegiatan,
+                  style: TextStyle(fontSize: 30),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                agenda.deskripsi,
-                textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 22.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  agenda.tanggal_kegiatan,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 17.0, fontStyle: FontStyle.italic),
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  agenda.isi_kegiatan,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 22.0),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

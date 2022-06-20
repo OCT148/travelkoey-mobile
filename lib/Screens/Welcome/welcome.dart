@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travelkoey/Screens/SignIn/signin.dart';
+import 'package:travelkoey/Screens/SignUp/signup.dart';
 
 class Welcome extends StatelessWidget {
 
@@ -73,7 +75,7 @@ class Welcome extends StatelessWidget {
                                 style: TextStyle(fontSize: 16),
                               ),
                               style: ButtonStyle(
-                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25, vertical: 10  )),
+                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25, vertical: 10)),
                                   foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                                   backgroundColor: MaterialStateProperty.all<Color>(Colors.cyan),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -83,7 +85,7 @@ class Welcome extends StatelessWidget {
                                   )
                               ),
                             onPressed: () => {
-                              Navigator.pushNamed(context, '/signin'),
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn())),
                             },
                           ),
                         ),
@@ -96,7 +98,7 @@ class Welcome extends StatelessWidget {
                                 style: TextStyle(fontSize: 16),
                               ),
                               style: ButtonStyle(
-                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 25, vertical: 10  )),
+                                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(horizontal: 22, vertical: 10)),
                                   foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                                   backgroundColor: MaterialStateProperty.all<Color>(Colors.cyan),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -106,7 +108,7 @@ class Welcome extends StatelessWidget {
                                   )
                               ),
                               onPressed: () => {
-                                Navigator.pushNamed(context, '/signup'),
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp())),
                             },
                           ),
                         ),
